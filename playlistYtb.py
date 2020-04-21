@@ -1,6 +1,7 @@
-import pytube 
+import pytube
 import requests
 from bs4 import BeautifulSoup
+import os
 
 def download_playlist(URL):
     #URL = f"https://www.youtube.com/watch?v=JGwWNGJdvx8&list=PLMC9KNkIncKtPzgY-5rmhvj7fax8fdxoj"
@@ -17,8 +18,7 @@ def download_playlist(URL):
     for i in range (len(results)):
         youtube = pytube.YouTube(results[i])
         video = youtube.streams.first()
-        #put your directory
-        video.download('put_the_directory_where_the_fileçwill_be_saved')
-        #Example 'C:\\Users\\bou\\Desktop'
-    return "Done bro"
+        path = os.path.abspath(os.getcwd())
+        video.download(path)
+    return "Check :", path
 
