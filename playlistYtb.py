@@ -18,6 +18,7 @@ def download_playlist(URL):
         youtube = pytube.YouTube(results[i])
         video = youtube.streams.first()
         #put your directory
-        video.download('C:\\Users\\bouli\\Desktop')
-    return "Check your Desktop bro"
+        video.download('put_the_directory_where_the_fileçwill_be_saved')
+        #Example 'C:\\Users\\bou\\Desktop'
+    return "Done bro"
 
